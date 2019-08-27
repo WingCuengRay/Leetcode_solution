@@ -6,7 +6,7 @@ package com.leetcode.easy;
 public class ReverseInteger {
 
     /**
-     * using math operation to check if the partly reversed number overlflows
+     * Second solution inspired by discussion: using math operation to check if the partly reversed number overlflows
      *
      * Time: 1 ms
      * Memory: 33.4 MB
@@ -33,7 +33,7 @@ public class ReverseInteger {
     }
 
     /**
-     * using String to reverse the integer
+     * First attempt: using String to reverse the integer
      *
      * Time: 2 ms
      * Memory: 34.2 MB
