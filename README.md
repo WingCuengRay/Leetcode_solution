@@ -7,6 +7,8 @@
 - [14. Longest Common Prefix](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/14_Longest_Common_Prefix.md)
 
 ## Medium
+- [2. Add Two Numbers](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/2_Add_Two_Numbers.md)
+
 
 ## Difficult
 - [10.	Regular Expression Matching](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/10_Regular_Expression_Matching.md)

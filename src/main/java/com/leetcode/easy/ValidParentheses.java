@@ -26,6 +26,7 @@ public class ValidParentheses {
             }
         }
 
+        // this case is missing in the first submission!
         if(stack.isEmpty())
             return true;
         else
