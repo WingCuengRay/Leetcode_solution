@@ -1,10 +1,12 @@
 # Leetcode Solution by Yongcong Lei
 
 ## Easy
-- [1. Two Sum]()
-- [Leetcode 题解]()
-- [算法]()
+- [1. Two Sum](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/1_Two_Sum.md)
+- [7. Reverse Integer](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/7_Reverse_Integer.md)
+- [13. Roman to Integer](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/13_Roman_to_Integer.md)
+- [14. Longest Common Prefix](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/14_Longest_Common_Prefix.md)
 
 ## Medium
 
 ## Difficult
+- [10.	Regular Expression Matching](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/10_Regular_Expression_Matching.md)
