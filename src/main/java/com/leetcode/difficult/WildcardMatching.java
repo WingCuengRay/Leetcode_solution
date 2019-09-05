@@ -4,35 +4,34 @@ package com.leetcode.difficult;
  * Created by Yongcong Lei on 8/30/2019
  */
 public class WildcardMatching {
-    public boolean isMatch(String s, String p) {
+
+    /**
+     * First approach: Recursion
+     *
+     * Time complexity: O(2^(m+n))
+     * @param s
+     * @param p
+     * @return
+     */
+    public boolean isMatch_Recursion(String s, String p) {
         if(p.isEmpty()){
             return s.isEmpty();
         }
 
         if(p.charAt(0) == '*')
-            return isMatch(s, p.substring(1)) || (!s.isEmpty() && isMatch(s.substring(1), p));
+            return isMatch_Recursion(s, p.substring(1)) || (!s.isEmpty() && isMatch_Recursion(s.substring(1), p));
         else {
             boolean firstMatch = !s.isEmpty() &&
                 (p.charAt(0) == '?' || s.charAt(0) == p.charAt(0));
-            return firstMatch && isMatch(s.substring(1), p.substring(1));
+            return firstMatch && isMatch_Recursion(s.substring(1), p.substring(1));
         }
-
-//
-//        boolean firstMatch = !s.isEmpty() &&
-//            (p.charAt(0) == '?' || p.charAt(0) == '*' || s.charAt(0) == p.charAt(0));
-//        if(firstMatch) {
-//            if (p.charAt(0) == '*') {
-//                return isMatch(s.substring(1), p) || isMatch(s, p.substring(1));
-//            } else
-//                return isMatch(s.substring(1), p.substring(1));
-//        } else {
-//            if(firstMatch || p.charAt(0)=='*')
-//                return isMatch(s, p.substring(1));
-//            else
-//                return false;
-//        }
     }
 
+    /**
+     * Second approach: Dynamic programming for Wildcard Matching
+     *
+     * Time complexity: O(MN)
+     */
     public boolean isMatch_DP(String s, String p){
         boolean dp[][] = new boolean[s.length()+1][p.length()+1];
 
@@ -56,32 +55,37 @@ public class WildcardMatching {
         }
 
         return dp[0][0];
+    }
 
-//        for(int i=0; i<=s.length(); i++)
-//            dp[i][p.length()] = false;
-//        boolean pEmpty = p.replace("*", "").isEmpty();
-//        for(int j=0; j<=p.length(); j++)
-//            dp[s.length()][j] = pEmpty;
-//        dp[s.length()][p.length()] = true;
-//
-//        for(int i=s.length(); i>=0; i--){
-//            for(int j=p.length()-1; j>=0; j--){
-//                boolean firstMatch = i < s.length() && (p.charAt(j) == '?' || p.charAt(j) == '*' || p.charAt(j) == s.charAt(i));
-//                if(firstMatch){
-//                    if(p.charAt(j) != '*')
-//                        dp[i][j] = dp[i+1][j+1];
-//                    else {
-//                        dp[i][j] = dp[i][j+1] || dp[i+1][j] || dp[i+1][j+1];
-//                    }
-//                } else {
-//                    if(p.charAt(j) != '*')
-//                        dp[i][j] = false;
-//                    else
-//                        dp[i][j] = dp[i][j+1];
-//                }
-//            }
-//        }
+    /**
+     * Inspired by fastest solution in Leetcode
+     *
+     * Time Complexity: wrose case - O(MN), but the case happens infrequently.
+     */
+    public boolean isMatch_Tricky(String s, String p){
+        int i = 0;
+        int j = 0;
+        int nextI = -1;              // the index of char to track back if something doesn't match
+        int nextJ = -1;              // the index of char after a '*', for trace-back if something doesn't match
 
-//        return dp[0][0];
+        while(i < s.length()){
+            if(j < p.length() && (p.charAt(j)=='?' || s.charAt(i) == p.charAt(j)) ){
+                i++;
+                j++;
+            } else if (j < p.length() && p.charAt(j) == '*'){
+                nextI = i+1;
+                nextJ = ++j;
+            } else if(nextI != -1) {            // a mismatch happens, then trace back if a '*' happens before.
+                // trace back
+                i = nextI++;
+                j = nextJ;              // let j trace back to be the next character of '*'
+            } else
+                return false;           // No '*' occurs before a mismatch happens
+        }
+
+        while (j < p.length() && p.charAt(j) == '*')
+            j++;                        // skip tailing '*'
+
+        return j == p.length();         // return true if everything in pattern has been matched, false otherwise.
     }
 }

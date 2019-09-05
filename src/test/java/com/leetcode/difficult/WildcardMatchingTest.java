@@ -2,7 +2,6 @@ package com.leetcode.difficult;
 
 import static org.junit.Assert.*;
 
-import com.sun.webkit.graphics.WCImageDecoder;
 import org.junit.Test;
 
 public class WildcardMatchingTest {
@@ -11,17 +10,17 @@ public class WildcardMatchingTest {
     public void isMatch() {
         WildcardMatching wildcardMatching = new WildcardMatching();
 
-        boolean result = wildcardMatching.isMatch("acdcb", "a*c?b");
+        boolean result = wildcardMatching.isMatch_Recursion("acdcb", "a*c?b");
         assertFalse(result);
 
 
-        result = wildcardMatching.isMatch("aaaabaaaabbbbaabbbaabbaababbabbaaaababaaabbbbbbaabbbabababbaaabaabaaaaaabbaabbbbaababbababaabbbaababbbba",
+        result = wildcardMatching.isMatch_Recursion("aaaabaaaabbbbaabbbaabbaababbabbaaaababaaabbbbbbaabbbabababbaaabaabaaaaaabbaabbbbaababbababaabbbaababbbba",
             "*****b*aba***babaa*bbaba***a*aaba*b*aa**a*b**ba***a*a*");
         assertTrue(result);
 
         // the application will get stuck here because the time complexity for recursive algorithm is too high
         // and it take lots of time until it finishes.
-        result = wildcardMatching.isMatch("aaabbbaabaaaaababaabaaabbabbbbbbbbaabababbabbbaaaaba",
+        result = wildcardMatching.isMatch_Recursion("aaabbbaabaaaaababaabaaabbabbbbbbbbaabababbabbbaaaaba",
             "a*******b");
         assertFalse(result);
     }
@@ -42,4 +41,22 @@ public class WildcardMatchingTest {
             "a*******b");
         assertFalse(result);
     }
+
+    @Test
+    public void isMatch_Tricky() {
+        WildcardMatching wildcardMatching = new WildcardMatching();
+
+        boolean result = wildcardMatching.isMatch_Tricky("acdcb", "a*c?b");
+        assertFalse(result);
+
+
+        result = wildcardMatching.isMatch_Tricky("aaaabaaaabbbbaabbbaabbaababbabbaaaababaaabbbbbbaabbbabababbaaabaabaaaaaabbaabbbbaababbababaabbbaababbbba",
+            "*****b*aba***babaa*bbaba***a*aaba*b*aa**a*b**ba***a*a*");
+        assertTrue(result);
+
+        result = wildcardMatching.isMatch_Tricky("aaabbbaabaaaaababaabaaabbabbbbbbbbaabababbabbbaaaaba",
+            "a*******b");
+        assertFalse(result);
+    }
+
 }

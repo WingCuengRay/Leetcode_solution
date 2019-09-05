@@ -133,3 +133,53 @@ public class WildcardMatching {
 ```
 
 ### Third approach
+The third approach is based on tricky string comparision, inspired by the fastest leetcode solution
+of this problem.
+
+The idea is to have two extra index - `nextI` and `nextJ` for trace-back. Those two index is firstly set when
+there is a '*'. It's because only when `*` occurs we need to trace back since it can match zero or more of any characters.
+
+`nextI` is set to the next character that can be matched by '*' in string and `nextJ` is set to the next character of `*`. 
+A trace-back will happen only if `s[i]` and `p[j]` don't match. Each trace-back will increment `nextI` and reset `j`
+to the next character of `*` which is `nextJ`. It means `*` matches one more character and the subsequent 
+match will start after this character in the string.
+
+If every character of `s` has been matched, then we need to check if there is any character that is not matched in `p`. We can 
+skip tailing `*` in the pattern. It means the string and pattern don't match If there is still character remained unmatched in `p`.
+
+The worse-case time complexity of the approach is `O(MN)` (M is length of string and N is length of pattern). 
+It happens when string and pattern have long common prefix and greatly different length, and `*` involves. It will cause comparision of every character 
+in `p` in each trace-back, and trace-back will happens `M - N` times since their length varies greatly. 
+
+A worse case example is "aaaaaaaaaaaaa" and "*aab".
+
+```java
+public class WildcardMatching {
+    public boolean isMatch(String s, String p){
+        int i = 0;
+        int j = 0;
+        int nextI = -1;              // the index of char to track back if something doesn't match
+        int nextJ = -1;              // the index of char after a '*', for trace-back if something doesn't match
+
+        while(i < s.length()){
+            if(j < p.length() && (p.charAt(j)=='?' || s.charAt(i) == p.charAt(j)) ){
+                i++;
+                j++;
+            } else if (j < p.length() && p.charAt(j) == '*'){
+                nextI = i+1;
+                nextJ = ++j;
+            } else if(nextI != -1) {            // a mismatch happens, then trace back if a '*' happens before.
+                // trace back
+                i = nextI++;
+                j = nextJ;              // let j trace back to be the next character of '*'
+            } else
+                return false;           // No '*' occurs before a mismatch happens
+        }
+
+        while (j < p.length() && p.charAt(j) == '*')
+            j++;                        // skip tailing '*'
+
+        return j == p.length();         // return true if everything in pattern has been matched, false otherwise.
+    }
+}
+```
