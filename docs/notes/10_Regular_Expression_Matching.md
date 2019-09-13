@@ -56,11 +56,11 @@ isMatch(s[i...N-1], p[j...M-1]):
   if p[j+1] doesn't exist or p[j+1] != '*':     // SP1
     // "s[i] matches p[j]" also check if p[j] == "." 
     if s[i] matches p[j]:                                 
-      return isMatch(s[i+1...N-1], p[j+1...M-1]) or isMatch()
+      return isMatch(s[i+1...N-1], p[j+1...M-1]) 
     else
       return false                              
   else:     // special case: p[j+1] exists and p[j+1] == '*'                            // SP2
-     if s[i] matches p[j]:     
+    if s[i] matches p[j]:     
       return isMatch(s[i+1...N-1], p[j...M-1]) or isMatch(s[i...N-1], p[j+2...M-1])     // SP2_1
     else
       return isMatch(s[i...N-1], p[j+2...M-1])                                          // SP2_2
@@ -107,18 +107,9 @@ it's invoked many times with each time returning the same result.
 Then we have the two key elements of dynamic programming -- optimal sub-problem and overlapped sub-problem. We could use dynamic programming
 to solve the problem. The first thing we need to do is to figure out the recursive formula.
 
-$$firstMatch = (p[j] == '.' \text { or } s[i] == p[j])$$
+![](../pics/10_dp_first_match.png)
 
-$$
-dj[i][j] =\begin{cases}
-  true & i=N \text{ and } j=M \\
-  false & i<N \text{ and } j=M \\ 
-  firstMatch \text{ and } dp[i+1][j+1] & j+1>=N \text{ or } p[j+1] 	\neq '*' \\
-  dp[i+1][j] || dp[i][j+2] & firstMatch \text{ and } p[j+1]='*' \\
-  dp[i][j+2] & !firstMatch \text { and } p[j+1]='*'
-  \end{cases}
-$$
-
+![](../pics/10_dp_formula.png)
 
 ```java
 class RegularExpressionMatching{

@@ -15,7 +15,7 @@ link: https://leetcode.com/problems/longest-common-prefix/
 ## Analysis
 ### Base case
 1. If there are no string in the array, `""` is returned.
-2. If any of the string is `""`, `""`
+2. If any of the string in the list is `""`, `""` is returned.
 3. If there is only one string in the array, the string is returned.
 
 ### First Approach - vertical matching

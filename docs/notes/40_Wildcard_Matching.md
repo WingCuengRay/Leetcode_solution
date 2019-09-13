@@ -13,8 +13,8 @@ link: https://leetcode.com/problems/wildcard-matching/
 ## Analysis
 This problem is quite similar to [10. Regular Expression](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/10_Regular_Expression_Matching.md). The only difference 
 is that `'*'` matches zero or more of the preceding character in problem 10, which means `'*'` cannot be the first element in th pattern.
-However, in this problem, `'*'` is used to match any sequence of characters. As a result,  we need to have a mechanism to "memorize" the preceding
-character of `'*'` in problem 10, while we needn't in this problem.
+However, in this problem, `'*'` is used to match any sequence of characters. As a result, we don't need the mechanism in *Problem 10* to 
+"memory" the preceding character.
  
 ### Basic idea
 The idea here is pretty similar with Problem 10.
@@ -39,8 +39,9 @@ we need to check if current character of the pattern is '`*'` or not. If it's `'
 two sub-problem: 
 1. if `s[i...N-1]` match `p[j+1...M-1]` 
 2. if `s[i+1...N-1]` match `p[j...M-1]`
+
 The first sub-problem means we don't use `'*'` to match any character in the string. The second one means we use it to match 
-the current character of the string (which is `s[i]`)
+the current character of the string (which is `s[i]`), and `'*'` in pattern will be keep to in case of matching the next character.
 
 ### First Approach - Recursion
 In my opinion, if you can't apply DP immediately, you can use recursion to help you clear your mind. Then you can improve it
@@ -93,7 +94,10 @@ public class WildcardMatching {
 
 ### Second Approach - Dynamic Programming
 Actually, we can easily figure out the recursive equation according to the idea above. Here is the
-equation I get.
+equation I get. The value of `dp[i][j]` means whether the string `s[i...N-1]` matches `p[j...M-1]` where N is the length of 
+the input string and `M` is the length of the pattern.
+
+`firstMatch = (p[j] == '?' or p[j] == s[i])`
 
 ![Recursive equation](../pics/40_dp_equation.png)
 

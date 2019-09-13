@@ -8,7 +8,7 @@
 ### Special case
 1. If the sum of digits in two node greater than 10, the decimal value (`sum/10`) should be added into the next node.
 2. If the sum of last node(s) are greater than 10, an extra node should be append to the result list. The value
-of the new node is just the decimal value.
+of the new node is just the decimal value of the sum in last round.
 3. The sum should can be comprised of a node in first list, a node in second list and the decimal value of previous sum.
 Meanwhile, it's possible that the node in either first or second list is missing.
 
