@@ -21,7 +21,7 @@ Although the above answer is in lexicographical order, your answer could be in a
 link: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 
 ## Solution
-```
+```java
 public class LetterCombination {
     public List<String> letterCombinations(String digits) {
         if(digits.isEmpty())
