@@ -1,4 +1,7 @@
 # Leetcode Solution 
+
+Those problems with **bold** are the ones that I can't solve before reading the solution. They need to be
+reviewed time to time.
 ## Easy
 - [1. Two Sum](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/1_Two_Sum.md)
 - [7. Reverse Integer](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/7_Reverse_Integer.md)
@@ -7,11 +10,12 @@
 
 ## Medium
 - [2. Add Two Numbers](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/2_Add_Two_Numbers.md)
-- [5. Longest Palindromic Substring](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/5_Longest_Palindromic_Substring.md)
+- **[5. Longest Palindromic Substring](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/5_Longest_Palindromic_Substring.md)**
 - [8. String to Integer](https://github.com/WingCuengRay/Leetcode_solution/blob/2da9f078504b7f07fff40b425fd2a3f17c54f106/docs/notes/8_String_to_integer.md)
-- [15. 3 Sum](https://github.com/WingCuengRay/Leetcode_solution/blob/2da9f078504b7f07fff40b425fd2a3f17c54f106/docs/notes/15_3Sum.md)
+- **[15. 3 Sum](https://github.com/WingCuengRay/Leetcode_solution/blob/2da9f078504b7f07fff40b425fd2a3f17c54f106/docs/notes/15_3Sum.md)**
 - [16. 3 Sum Closest](https://github.com/WingCuengRay/Leetcode_solution/blob/2da9f078504b7f07fff40b425fd2a3f17c54f106/docs/notes/16_3SumClosest.md)
+- **[22. Generate Parentheses](https://github.com/WingCuengRay/Leetcode_solution/blob/2da9f078504b7f07fff40b425fd2a3f17c54f106/docs/notes/22_Generate_Parentheses.md)**
 
 ## Difficult
-- [10.	Regular Expression Matching](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/10_Regular_Expression_Matching.md)
+- **[10.	Regular Expression Matching](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/10_Regular_Expression_Matching.md)**
 - [40. Wildcard Matching ](https://github.com/WingCuengRay/Leetcode_solution/blob/master/docs/notes/40_Wildcard_Matching.md).
