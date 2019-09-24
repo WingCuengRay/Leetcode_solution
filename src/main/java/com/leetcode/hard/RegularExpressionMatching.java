@@ -1,4 +1,4 @@
-package com.leetcode.difficult;
+package com.leetcode.hard;
 
 /**
  * Created by Yongcong Lei on 8/27/2019

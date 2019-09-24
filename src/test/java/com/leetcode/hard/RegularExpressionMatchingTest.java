@@ -1,8 +1,8 @@
-package com.leetcode.difficult;
-
-import static org.junit.Assert.*;
+package com.leetcode.hard;
 
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class RegularExpressionMatchingTest {
     

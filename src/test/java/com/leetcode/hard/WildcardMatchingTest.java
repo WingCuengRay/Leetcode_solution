@@ -1,4 +1,4 @@
-package com.leetcode.difficult;
+package com.leetcode.hard;
 
 import static org.junit.Assert.*;
 
