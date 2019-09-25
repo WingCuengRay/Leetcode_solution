@@ -46,7 +46,7 @@ We don't need to deal with the case when `j < i` since it's meaningless.
 
 As a result, we can get the recursive equation as below. 
 
-![DP equations](../pics/5_dp_equation.PNG)
+![DP equations](../../pics/5_dp_equation.PNG)
 
 The time complexity of DP approach is `O(n^2)`. The space complexity is `O(n^2)` as well, but it could be improved to `O(n)`. Please see the next section for detail.
 
@@ -102,7 +102,7 @@ There is one thing that need to be noticed when filling the dp matrix. Instead o
 the main diagonal runs horizontally. The rotated table is like the below one (Ignore the value inside. The picture is from CLRS). Firstly we fill the main diagonal (which is always true in the problem),
 and then we fill the second diagonal and so on.
 
-![An example from CLRS about rotated table](../pics/5_rotated_table.png)
+![An example from CLRS about rotated table](../../pics/5_rotated_table.png)
 #### With `O(n^2)` space complexity
 ```java
 public class LongestPalindromicSubstring {

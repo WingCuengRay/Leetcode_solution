@@ -99,7 +99,7 @@ the input string and `M` is the length of the pattern.
 
 `firstMatch = (p[j] == '?' or p[j] == s[i])`
 
-![Recursive equation](../pics/40_dp_equation.png)
+![Recursive equation](../../pics/40_dp_equation.png)
 
 The first two cases are base cases and the last three cases are derived cases. One mistake I made when implementing
 my DP algorithm is that I miss the third case. If the string is empty and the pattern is not, they can still match, 

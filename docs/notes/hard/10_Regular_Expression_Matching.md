@@ -107,9 +107,9 @@ it's invoked many times with each time returning the same result.
 Then we have the two key elements of dynamic programming -- optimal sub-problem and overlapped sub-problem. We could use dynamic programming
 to solve the problem. The first thing we need to do is to figure out the recursive formula.
 
-![](../pics/10_dp_first_match.png)
+![](../../pics/10_dp_first_match.png)
 
-![](../pics/10_dp_formula.png)
+![](../../pics/10_dp_formula.png)
 
 ```java
 class RegularExpressionMatching{

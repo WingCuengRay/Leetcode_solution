@@ -64,7 +64,7 @@ but without overlapped sub-problem.
 
 We can do it iteratively, getting the common longest prefix from left to right (horizaontal matching).
 
-![](../pics/14_basic.png)
+![](../../pics/14_basic.png)
 
 
 ```java
@@ -107,7 +107,7 @@ In this way, we can divide the problem into two equal-size sub-problem.
 
 With trie.
 
-![](../pics/14_lcp_trie.png)
+![](../../pics/14_lcp_trie.png)
 
 ## Reference
 1. https://leetcode.com/problems/longest-common-prefix/solution/ 
