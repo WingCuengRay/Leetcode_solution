@@ -21,5 +21,5 @@ reviewed time to time.
 
 ## Hard
 - **[10. Regular Expression Matching](./docs/notes/hard/10_Regular_Expression_Matching.md)**
-- [23. Merge k Sorted Lists ](./docs/notes/hard/23_Merge_k_Sorted_Lists.md).
-- [40. Wildcard Matching ](./docs/notes/hard/40_Wildcard_Matching.md).
+- [23. Merge k Sorted Lists ](./docs/notes/hard/23_Merge_k_Sorted_Lists.md)
+- [40. Wildcard Matching ](./docs/notes/hard/40_Wildcard_Matching.md)
