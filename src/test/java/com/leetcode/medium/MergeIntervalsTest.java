@@ -1,8 +1,7 @@
 package com.leetcode.medium;
 
+import com.leetcode.interval.MergeIntervals;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class MergeIntervalsTest {
 
