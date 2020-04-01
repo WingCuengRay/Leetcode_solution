@@ -1,6 +1,6 @@
 package com.leetcode.medium;
 
-import com.leetcode.interval.MergeIntervals;
+import com.leetcode.category.interval.MergeIntervals;
 import org.junit.Test;
 
 public class MergeIntervalsTest {
