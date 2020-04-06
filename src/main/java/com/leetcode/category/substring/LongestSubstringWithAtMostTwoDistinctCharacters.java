@@ -1,4 +1,4 @@
-package com.leetcode.category.slidingwindow;
+package com.leetcode.category.substring;
 
 import java.util.Collections;
 import java.util.HashMap;
