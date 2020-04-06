@@ -8,7 +8,7 @@ public class MaximumSizeSubarraySumEqualsK {
     /**
      * Improve the method below with HashMap. Use HashMap to lookup the index of a value.
      *
-     * The idea of this problem is abut Prefix Sum. The prefix sum, cumulative sum, inclusive scan, or simply scan of a sequence of numbers.
+     * The idea of this problem is abut Prefix Sum. The prefix sum is the cumulative sum of a sequence of numbers.
      * Suppose we have two prefix sum p[i] and p[j] (j > i). If there is a subarray sum equals to k, there must be j and i (n > j > i >= 0) such that p[j] - p[i] = k.
      * After the calculate the prefix sum of the array, the problem can be reduced to the Two Sum {@linktourl  https://leetcode.com/problems/two-sum/} problem, which can be solved efficiently with HashMap
      *
