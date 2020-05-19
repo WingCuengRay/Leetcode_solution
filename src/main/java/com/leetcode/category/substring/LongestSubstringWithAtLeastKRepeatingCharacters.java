@@ -80,7 +80,7 @@ public class LongestSubstringWithAtLeastKRepeatingCharacters {
             while(curr < s.length()) {
                 final char ch = s.charAt(curr);
                 if(map[ch - 'a'] > 0 && map[ch - 'a'] < k) {
-//                  maxLen = Math.max(maxLen, curr - start);                                       // we can't ensure the whole s.substring(start, curr) is a valid substring after split
+//                  maxLen = Math.max(maxLen, curr - start);                                        // we can't ensure the whole s.substring(start, curr) is a valid substring after split (in range [start, curr])
                     maxLen = Math.max(maxLen, longestSubstring(s.substring(start, curr), k));       // so we need to recursively check it
                     start = curr+1;
                 }
